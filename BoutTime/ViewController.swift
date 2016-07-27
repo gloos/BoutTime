@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -16,36 +17,46 @@ class ViewController: UIViewController {
     @IBAction func topButtonDownvote(sender: AnyObject) {
         swap(&textViews[0].text, &textViews[1].text)
         swap(&textViews[0].tag, &textViews[1].tag)
-  
+        print(selectedYears)
+        print(yearsQuizRound)
     }
     @IBAction func middleButtonDownvote(sender: AnyObject) {
         swap(&textViews[1].text, &textViews[2].text)
         swap(&textViews[1].tag, &textViews[2].tag)
-
+        print(selectedYears)
+        print(yearsQuizRound)
     }
     @IBAction func bottomButtonDownvote(sender: AnyObject) {
         swap(&textViews[2].text, &textViews[3].text)
         swap(&textViews[2].tag, &textViews[3].tag)
-
+        print(selectedYears)
+        print(yearsQuizRound)
     }
     @IBAction func topButtonUpvote(sender: AnyObject) {
         swap(&textViews[1].text, &textViews[0].text)
         swap(&textViews[1].tag, &textViews[0].tag)
-
+        print(selectedYears)
+        print(yearsQuizRound)
     }
     @IBAction func middleButtonUpvote(sender: AnyObject) {
         swap(&textViews[2].text, &textViews[1].text)
         swap(&textViews[2].tag, &textViews[1].tag)
-
+        print(selectedYears)
+        print(yearsQuizRound)
     }
     @IBAction func lastButtonUpvote(sender: AnyObject) {
         swap(&textViews[3].text, &textViews[2].text)
         swap(&textViews[3].tag, &textViews[2].tag)
-
+        print(selectedYears)
+        print(yearsQuizRound)
     }
     @IBAction func nextRoundButton(sender: AnyObject) {
         if round >= 6 {
             //add view controller to display the score
+            print("Presenting new VC")
+            let vc =  self.storyboard?.instantiateViewControllerWithIdentifier("scoreController") as! ScoreViewController
+            vc.score = totalScore
+            self.presentViewController(vc, animated: true, completion: nil)
         } else {
             launchNextRound()
         }
@@ -69,24 +80,36 @@ class ViewController: UIViewController {
         startTimer()
     }
 
-
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            checkAnswers()
+        }
+    }
 
     //MARK: Populate text fields
     
     func displayQuestions() {
+        
+
+        
             for textView in textViews {
                 let questionIndex = randomNumber()
                 if blacklist.contains(questionIndex) {
                     reset()
                     displayQuestions()
-                }
+                } else {
                 blacklist.append(questionIndex)
                 yearsQuizRound.append(events[questionIndex].year)
                 textView.text = events[questionIndex].name
                 textView.tag = events[questionIndex].year
                 print("Blacklist: \(blacklist)")
-            }
-        yearsQuizRound.sortInPlace({ $0 < $1 })
+                yearsQuizRound.sortInPlace({ $0 < $1 })
+                }
+        }
            }
     
     func checkAnswers() {
@@ -106,17 +129,22 @@ class ViewController: UIViewController {
             print("Keep going!")
             print(selectedYears)
             print(yearsQuizRound)
+            if let image = UIImage(named: "next_round_fail") {
+                nextRound.setImage(image, forState: .Normal)
+            }
+            round += 1
         }
     }
     
     //MARK: Helper methods
     
     func reset() {
+        blacklist.removeAll()
+        yearsQuizRound.removeAll()
         for textView in textViews {
             textView.text = nil
         }
-        blacklist.removeAll()
-        yearsQuizRound.removeAll()
+
     }
     
     func launchNextRound() {
@@ -143,12 +171,10 @@ class ViewController: UIViewController {
         if self.counter > 0 && isGameOver == false {
             nextRound.setTitle(String(self.counter--), forState: .Normal)
         } else if self.counter == 0 {
-             nextRound.setTitle(String(0), forState: .Normal)
             stopTimer()
-            if let image = UIImage(named: "next_round_fail") {
-                nextRound.setImage(image, forState: .Normal)
-            }
-            round += 1
+            checkAnswers()
+            nextRound.setTitle(String(0), forState: .Normal)
+
             
         }
     }
@@ -156,5 +182,8 @@ class ViewController: UIViewController {
     func stopTimer() {
          self.timer.invalidate()
     }
+    
+
+
 }
 
