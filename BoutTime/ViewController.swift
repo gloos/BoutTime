@@ -11,44 +11,31 @@ import GameKit
 import SafariServices
 
 class ViewController: UIViewController {
-
-
-    @IBOutlet var textViews: [UITextView]!
+    
+    @IBOutlet var labels: [UILabel]!
     @IBAction func topButtonDownvote(sender: AnyObject) {
-        swap(&textViews[0].text, &textViews[1].text)
-        swap(&textViews[0].tag, &textViews[1].tag)
-        print(selectedYears)
-        print(yearsQuizRound)
+        swap(&labels[0].text, &labels[1].text)
+        swap(&labels[0].tag, &labels[1].tag)
     }
     @IBAction func middleButtonDownvote(sender: AnyObject) {
-        swap(&textViews[1].text, &textViews[2].text)
-        swap(&textViews[1].tag, &textViews[2].tag)
-        print(selectedYears)
-        print(yearsQuizRound)
+        swap(&labels[1].text, &labels[2].text)
+        swap(&labels[1].tag, &labels[2].tag)
     }
     @IBAction func bottomButtonDownvote(sender: AnyObject) {
-        swap(&textViews[2].text, &textViews[3].text)
-        swap(&textViews[2].tag, &textViews[3].tag)
-        print(selectedYears)
-        print(yearsQuizRound)
+        swap(&labels[2].text, &labels[3].text)
+        swap(&labels[2].tag, &labels[3].tag)
     }
     @IBAction func topButtonUpvote(sender: AnyObject) {
-        swap(&textViews[1].text, &textViews[0].text)
-        swap(&textViews[1].tag, &textViews[0].tag)
-        print(selectedYears)
-        print(yearsQuizRound)
+        swap(&labels[1].text, &labels[0].text)
+        swap(&labels[1].tag, &labels[0].tag)
     }
     @IBAction func middleButtonUpvote(sender: AnyObject) {
-        swap(&textViews[2].text, &textViews[1].text)
-        swap(&textViews[2].tag, &textViews[1].tag)
-        print(selectedYears)
-        print(yearsQuizRound)
+        swap(&labels[2].text, &labels[1].text)
+        swap(&labels[2].tag, &labels[1].tag)
     }
     @IBAction func lastButtonUpvote(sender: AnyObject) {
-        swap(&textViews[3].text, &textViews[2].text)
-        swap(&textViews[3].tag, &textViews[2].tag)
-        print(selectedYears)
-        print(yearsQuizRound)
+        swap(&labels[3].text, &labels[2].text)
+        swap(&labels[3].tag, &labels[2].tag)
     }
     @IBAction func nextRoundButton(sender: AnyObject) {
         if round >= 6 {
@@ -70,12 +57,11 @@ class ViewController: UIViewController {
     var selectedYears = [Int]()
     var timer = NSTimer()
     var counter = 60
-    var isGameOver = false
     var totalScore = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        print(textViews.count)
+        print(labels.count)
         displayQuestions()
         startTimer()
     }
@@ -93,20 +79,19 @@ class ViewController: UIViewController {
     //MARK: Populate text fields
     
     func displayQuestions() {
-        
-
-        
-            for textView in textViews {
+            for label in labels {
                 let questionIndex = randomNumber()
+                // we blacklist the index to make sure no event appears twice in a single round
                 if blacklist.contains(questionIndex) {
+                    //if the index is in the blacklist, we reset the properties and start again
                     reset()
                     displayQuestions()
                 } else {
                 blacklist.append(questionIndex)
                 yearsQuizRound.append(events[questionIndex].year)
-                textView.text = events[questionIndex].name
-                textView.tag = events[questionIndex].year
-                print("Blacklist: \(blacklist)")
+                label.text = events[questionIndex].name
+                label.tag = events[questionIndex].year
+                //We sort the years by ascending order
                 yearsQuizRound.sortInPlace({ $0 < $1 })
                 }
         }
@@ -114,9 +99,10 @@ class ViewController: UIViewController {
     
     func checkAnswers() {
         selectedYears.removeAll()
-        for textView in textViews {
-            selectedYears.append(textView.tag)
+        for label in labels {
+            selectedYears.append(label.tag)
         }
+        // If the array of years the user has selected is equal to the array of years defined in the model, we present a green button and increase the total score and number of rounds played
         if selectedYears == yearsQuizRound {
             stopTimer()
             if let image = UIImage(named: "next_round_success") {
@@ -126,9 +112,6 @@ class ViewController: UIViewController {
             round += 1
             
         } else {
-            print("Keep going!")
-            print(selectedYears)
-            print(yearsQuizRound)
             if let image = UIImage(named: "next_round_fail") {
                 nextRound.setImage(image, forState: .Normal)
             }
@@ -141,10 +124,9 @@ class ViewController: UIViewController {
     func reset() {
         blacklist.removeAll()
         yearsQuizRound.removeAll()
-        for textView in textViews {
-            textView.text = nil
+        for label in labels {
+            label.text = nil
         }
-
     }
     
     func launchNextRound() {
@@ -158,6 +140,7 @@ class ViewController: UIViewController {
     func randomNumber() -> Int {
         return GKRandomSource.sharedRandom().nextIntWithUpperBound(events.count)
     }
+    
 
     //MARK: Timer methods
     
@@ -168,14 +151,12 @@ class ViewController: UIViewController {
     }
     
     func updateCounter() {
-        if self.counter > 0 && isGameOver == false {
+        if self.counter > 0 {
             nextRound.setTitle(String(self.counter--), forState: .Normal)
         } else if self.counter == 0 {
             stopTimer()
             checkAnswers()
             nextRound.setTitle(String(0), forState: .Normal)
-
-            
         }
     }
     

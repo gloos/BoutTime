@@ -17,42 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jet-pE-WFS">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="139" width="259" height="100"/>
-                                </variation>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xm-5G-HHJ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="247" width="259" height="100"/>
-                                </variation>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUY-u4-P2D">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="355" width="259" height="100"/>
-                                </variation>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGz-y1-Zvv">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="28" width="259" height="100"/>
-                                </variation>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9t-Ag-vD6">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="down_full"/>
@@ -87,7 +51,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="up_half"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="279" y="189" width="33" height="50"/>
+                                    <rect key="frame" x="279" y="186" width="33" height="53"/>
                                 </variation>
                                 <connections>
                                     <action selector="topButtonUpvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRS-FR-xbg"/>
@@ -107,7 +71,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="up_half"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="279" y="297" width="33" height="50"/>
+                                    <rect key="frame" x="279" y="294" width="33" height="53"/>
                                 </variation>
                                 <connections>
                                     <action selector="middleButtonUpvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMm-nC-Vxl"/>
@@ -115,22 +79,63 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykM-YY-HV7">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Hi"/>
+                                <state key="normal" title="Button"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="66" y="495" width="238" height="62"/>
+                                    <rect key="frame" x="67" y="471" width="238" height="62"/>
                                 </variation>
                                 <connections>
                                     <action selector="nextRoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R9F-hn-0CQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-qU-Pgd">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="28" width="259" height="100"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nni-kQ-6xi">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="139" width="259" height="100"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyT-O5-jsg">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="247" width="259" height="100"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AU-Rg-W2W">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="355" width="259" height="100"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order events from most ancient at the top to most recent at the bottom" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpV-AS-UU4">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="541" width="360" height="51"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Jet-pE-WFS"/>
-                                <exclude reference="0xm-5G-HHJ"/>
-                                <exclude reference="VUY-u4-P2D"/>
-                                <exclude reference="FGz-y1-Zvv"/>
                                 <exclude reference="m9t-Ag-vD6"/>
                                 <exclude reference="cZL-3H-6fU"/>
                                 <exclude reference="7rI-hB-9M4"/>
@@ -138,14 +143,15 @@
                                 <exclude reference="z1Q-19-zMg"/>
                                 <exclude reference="Dzy-QB-HqC"/>
                                 <exclude reference="ykM-YY-HV7"/>
+                                <exclude reference="DKq-qU-Pgd"/>
+                                <exclude reference="nni-kQ-6xi"/>
+                                <exclude reference="DyT-O5-jsg"/>
+                                <exclude reference="2AU-Rg-W2W"/>
+                                <exclude reference="kpV-AS-UU4"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Jet-pE-WFS"/>
-                                <include reference="0xm-5G-HHJ"/>
-                                <include reference="VUY-u4-P2D"/>
-                                <include reference="FGz-y1-Zvv"/>
                                 <include reference="m9t-Ag-vD6"/>
                                 <include reference="cZL-3H-6fU"/>
                                 <include reference="7rI-hB-9M4"/>
@@ -153,15 +159,20 @@
                                 <include reference="z1Q-19-zMg"/>
                                 <include reference="Dzy-QB-HqC"/>
                                 <include reference="ykM-YY-HV7"/>
+                                <include reference="DKq-qU-Pgd"/>
+                                <include reference="nni-kQ-6xi"/>
+                                <include reference="DyT-O5-jsg"/>
+                                <include reference="2AU-Rg-W2W"/>
+                                <include reference="kpV-AS-UU4"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="nextRound" destination="ykM-YY-HV7" id="drK-c9-Ufh"/>
-                        <outletCollection property="textViews" destination="FGz-y1-Zvv" collectionClass="NSMutableArray" id="sV0-cK-ODd"/>
-                        <outletCollection property="textViews" destination="Jet-pE-WFS" collectionClass="NSMutableArray" id="rQY-ZV-pU2"/>
-                        <outletCollection property="textViews" destination="0xm-5G-HHJ" collectionClass="NSMutableArray" id="aIE-su-Kxq"/>
-                        <outletCollection property="textViews" destination="VUY-u4-P2D" collectionClass="NSMutableArray" id="CAJ-NI-CiE"/>
+                        <outletCollection property="labels" destination="DKq-qU-Pgd" collectionClass="NSMutableArray" id="fKN-F7-XCJ"/>
+                        <outletCollection property="labels" destination="nni-kQ-6xi" collectionClass="NSMutableArray" id="9do-cf-EZz"/>
+                        <outletCollection property="labels" destination="DyT-O5-jsg" collectionClass="NSMutableArray" id="I3n-oH-6NA"/>
+                        <outletCollection property="labels" destination="2AU-Rg-W2W" collectionClass="NSMutableArray" id="AIL-Bo-FDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
