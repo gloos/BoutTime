@@ -16,11 +16,163 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jet-pE-WFS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="139" width="259" height="100"/>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0xm-5G-HHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="247" width="259" height="100"/>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VUY-u4-P2D">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="355" width="259" height="100"/>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FGz-y1-Zvv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="28" width="259" height="100"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9t-Ag-vD6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="down_full"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="28" width="33" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="topButtonDownvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bac-9D-coK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZL-3H-6fU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="down_half"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="139" width="33" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="middleButtonDownvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bii-lX-xnQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-hB-9M4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="up_full"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="355" width="33" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="lastButtonUpvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gLQ-b7-sWv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWN-da-98H">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="up_half"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="189" width="33" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="topButtonUpvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRS-FR-xbg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1Q-19-zMg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="down_half"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="247" width="33" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="bottomButtonDownvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TNx-V1-fiz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzy-QB-HqC">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="up_half"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="297" width="33" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="middleButtonUpvote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMm-nC-Vxl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykM-YY-HV7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Hi"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="66" y="495" width="238" height="62"/>
+                                </variation>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R9F-hn-0CQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Jet-pE-WFS"/>
+                                <exclude reference="0xm-5G-HHJ"/>
+                                <exclude reference="VUY-u4-P2D"/>
+                                <exclude reference="FGz-y1-Zvv"/>
+                                <exclude reference="m9t-Ag-vD6"/>
+                                <exclude reference="cZL-3H-6fU"/>
+                                <exclude reference="7rI-hB-9M4"/>
+                                <exclude reference="IWN-da-98H"/>
+                                <exclude reference="z1Q-19-zMg"/>
+                                <exclude reference="Dzy-QB-HqC"/>
+                                <exclude reference="ykM-YY-HV7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Jet-pE-WFS"/>
+                                <include reference="0xm-5G-HHJ"/>
+                                <include reference="VUY-u4-P2D"/>
+                                <include reference="FGz-y1-Zvv"/>
+                                <include reference="m9t-Ag-vD6"/>
+                                <include reference="cZL-3H-6fU"/>
+                                <include reference="7rI-hB-9M4"/>
+                                <include reference="IWN-da-98H"/>
+                                <include reference="z1Q-19-zMg"/>
+                                <include reference="Dzy-QB-HqC"/>
+                                <include reference="ykM-YY-HV7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="nextRound" destination="ykM-YY-HV7" id="drK-c9-Ufh"/>
+                        <outletCollection property="textViews" destination="FGz-y1-Zvv" collectionClass="NSMutableArray" id="sV0-cK-ODd"/>
+                        <outletCollection property="textViews" destination="Jet-pE-WFS" collectionClass="NSMutableArray" id="rQY-ZV-pU2"/>
+                        <outletCollection property="textViews" destination="0xm-5G-HHJ" collectionClass="NSMutableArray" id="aIE-su-Kxq"/>
+                        <outletCollection property="textViews" destination="VUY-u4-P2D" collectionClass="NSMutableArray" id="CAJ-NI-CiE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="690" y="316"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="down_full" width="158" height="457"/>
+        <image name="down_half" width="158" height="229"/>
+        <image name="up_full" width="158" height="457"/>
+        <image name="up_half" width="158" height="229"/>
+    </resources>
 </document>
