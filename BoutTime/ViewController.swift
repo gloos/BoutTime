@@ -112,6 +112,7 @@ class ViewController: UIViewController {
             round += 1
             
         } else {
+            stopTimer()
             if let image = UIImage(named: "next_round_fail") {
                 nextRound.setImage(image, forState: .Normal)
             }
